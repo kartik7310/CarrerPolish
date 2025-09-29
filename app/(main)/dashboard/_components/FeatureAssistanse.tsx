@@ -1,9 +1,10 @@
 "use client"
 import { Button } from '@/components/ui/button'
-import { experts } from '@/services/options'
+import { CoachingExperts } from '@/services/options'
 import { useUser } from '@stackframe/stack'
 import Image from 'next/image'
 import React from 'react'
+import UserInputDialog from './UserInputDialog'
 
 const FeatureAssistanse = () => {
   const user = useUser()
@@ -18,14 +19,17 @@ const FeatureAssistanse = () => {
      </div>
 
      <div className='grid grid-cols-2 lg:grid-cols-5 xl:grid-cols-5 gap-10 mt-10'>
-      {experts.map((option,index)=>(
-        <div key={index} className='p-3 bg-secondary rounded-3xl flex flex-col justify-center items-center'>
+      {CoachingExperts.map((option,index)=>(
+        <UserInputDialog coachingOption={option}>
+ <div key={index} className='p-3 bg-secondary rounded-3xl flex flex-col justify-center items-center'>
           <Image src={option.icon} alt={option.name}
         width={200}
         height={200}
         className='h-[70px] w-[70px]'/>
         <h2>{option.name}</h2>
         </div>
+        </UserInputDialog>
+       
       ))}
      </div>
     </div>
