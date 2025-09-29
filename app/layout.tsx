@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { StackProvider, StackTheme } from "@stackframe/stack";
+import { stackClientApp } from "../stack/client";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Provider } from "./Provider";
+import './globals.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,15 +22,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <StackProvider app={stackClientApp}>
+          <StackTheme>
+            <Provider>{children}</Provider>
+          </StackTheme>
+        </StackProvider>
       </body>
     </html>
   );
