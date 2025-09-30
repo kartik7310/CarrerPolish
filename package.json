@@ -12,13 +12,16 @@
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-slot": "^1.2.3",
     "@stackframe/stack": "^2.8.41",
+    "assemblyai": "^4.16.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "convex": "^1.27.3",
     "lucide-react": "^0.544.0",
     "next": "15.5.4",
+    "node-record-lpcm16": "^1.0.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "recordrtc": "^5.6.2",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
